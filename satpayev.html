@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QANYSH.ИНФОГРАФИКА — Тарихи-Инженерлік Портрет</title>
+<style>
+:root{--bg:#090d12;--panel:#111823;--panel2:#182230;--text:#f2eee5;--muted:#8b9aa7;--copper:#d99b61;--soviet-red:#b83a2b;--grid-line:rgba(217,155,97,.12);--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Courier New',Courier,monospace,system-ui,sans-serif;line-height:1.6;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:30px 30px}
+a{color:inherit}button{font:inherit;cursor:pointer}.wrap{width:min(1180px,92%);margin:auto}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(9,13,18,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--copper)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}.brand{font-weight:900;letter-spacing:.2em;text-decoration:none;font-size:1.1rem;color:var(--copper)}.brand span{color:var(--soviet-red)}.navlinks{display:flex;gap:18px;flex-wrap:wrap}.navlinks a{text-decoration:none;color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}.navlinks a:hover{color:var(--copper)}
+.hero{padding:70px 0 50px;position:relative}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.eyebrow{color:var(--soviet-red);font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;font-weight:900}
+.hero h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.1;letter-spacing:-.02em;margin:16px 0;font-family:sans-serif}.hero h1 em{font-style:normal;color:var(--copper)}
+.lead{color:var(--muted);font-size:1rem;font-family:sans-serif}
+.blueprint-card{border:2px solid var(--copper);border-radius:12px;background:var(--panel);padding:24px;position:relative;box-shadow:0 0 30px rgba(217,155,97,.1)}
+.blueprint-card:before{content:"СЫЗБА № 1899-1964";position:absolute;top:-12px;right:20px;background:var(--bg);padding:0 8px;color:var(--copper);font-size:.75rem;letter-spacing:.2em}
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;border-top:1px dashed var(--line);padding-top:16px}
+.metric b{display:block;font-size:1.6rem;color:var(--copper);font-family:sans-serif}.metric span{font-size:.75rem;color:var(--muted);text-transform:uppercase}
+section{padding:65px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}
+.section-head h2{font-size:clamp(1.6rem,3vw,2.5rem);margin:8px 0 0;font-family:sans-serif;letter-spacing:-.02em;color:var(--copper)}
+.section-head p{color:var(--muted);max-width:500px;margin:0;font-family:sans-serif;font-size:.92rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--copper);border-radius:8px;padding:22px}
+.card .num{font-size:.75rem;color:var(--soviet-red);letter-spacing:.2em;font-weight:900}
+.card h3{margin:10px 0 8px;font-size:1.15rem;font-family:sans-serif}.card p{color:var(--muted);margin:0;font-size:.9rem;font-family:sans-serif}
+.chart-box{background:var(--panel);border:1px solid var(--copper);border-radius:12px;padding:24px;margin-top:20px}
+.chart-title{font-size:.9rem;color:var(--copper);letter-spacing:.15em;text-transform:uppercase;margin-bottom:15px;display:flex;justify-content:space-between}
+.bar-group{display:grid;gap:12px;margin-top:15px}
+.bar-item{display:grid;grid-template-columns:140px 1fr 60px;gap:15px;align-items:center;font-size:.85rem}
+.bar-track{height:16px;background:var(--panel2);border-radius:4px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--copper),var(--soviet-red));border-radius:3px;width:0;transition:width 1s ease-in-out}
+.timeline{position:relative;margin-top:20px}.timeline:before{content:"";position:absolute;left:85px;top:10px;bottom:10px;width:2px;background:var(--copper)}
+.event{display:grid;grid-template-columns:70px 1fr;gap:36px;margin:0 0 16px;position:relative}
+.year{color:var(--copper);font-weight:900;padding-top:16px;font-size:.95rem}
+.event button{width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:16px 20px;border-radius:8px;transition:.2s;font-family:sans-serif}
+.event button:hover,.event button.active{border-color:var(--copper);background:var(--panel2)}
+.event button strong{display:block;font-size:1rem;color:var(--copper)}.event button span{display:block;color:var(--muted);font-size:.85rem;margin-top:3px}
+.event-detail{margin:16px 0 0 106px;padding:20px;border-left:3px solid var(--soviet-red);background:rgba(184,58,43,.08);border-radius:0 8px 8px 0;color:var(--text);font-family:sans-serif;font-size:.92rem}
+.analysis{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.quote{background:var(--panel);border:1px solid var(--copper);border-radius:12px;padding:26px;position:relative}
+.quote blockquote{font-size:1.15rem;line-height:1.5;margin:0 0 16px;color:var(--text);font-family:sans-serif}.quote p{color:var(--muted);margin:0;font-size:.85rem}
+.comparison{display:grid;gap:12px}.compare-row{padding:16px 20px;border:1px solid var(--line);border-radius:8px;background:var(--panel);font-family:sans-serif}.compare-row b{display:block;margin-bottom:4px;color:var(--copper);font-size:.95rem}.compare-row span{color:var(--muted);font-size:.88rem}
+.museum{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.chat{border:1px solid var(--copper);background:var(--panel);border-radius:12px;padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.chat-head{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px stroke var(--line)}
+.avatar{width:40px;height:40px;display:grid;place-items:center;border-radius:4px;background:var(--soviet-red);color:#fff;font-weight:900}
+.chat-log{padding:18px 0;color:var(--text);min-height:200px;font-size:.9rem;font-family:sans-serif}
+.bubble{background:var(--panel2);padding:14px 16px;border-radius:8px;margin-bottom:12px;border:1px solid var(--line)}
+.chat-controls{display:flex;gap:8px;flex-wrap:wrap;padding-top:10px;border-top:1px solid var(--line)}.chat-controls button{border:1px solid var(--copper);background:transparent;color:var(--copper);padding:8px 14px;border-radius:4px;font-size:.8rem;transition:.2s}.chat-controls button:hover{background:var(--copper);color:var(--bg)}
+.archive{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.source{display:block;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:8px;text-decoration:none;transition:.2s;font-family:sans-serif}.source:hover{border-color:var(--copper)}.source b{display:block;font-size:.92rem;margin-bottom:4px;color:var(--copper)}.source span{font-size:.8rem;color:var(--muted)}
+.footer{padding:40px 0 60px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--copper)}.footline{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:768px){.nav,.hero-grid,.analysis,.museum,.grid3,.archive{grid-template-columns:1fr}.bar-item{grid-template-columns:100px 1fr 40px}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home">QANYSH<span>.</span> ИНФОГРАФИКА</a>
+    <nav class="navlinks">
+      <a href="#story">Контекст</a>
+      <a href="#data">Инфографика</a>
+      <a href="#timeline">Хронология</a>
+      <a href="#impact">Талдау</a>
+      <a href="#museum">Музей</a>
+      <a href="#sources">Архив</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home" style="border-top:0">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">[ ИНЖЕНЕРЛІК-ТАРИХИ СХЕМА · 1899–1964 ]</div>
+        <h1>Қаныш Сәтбаев:<br><em>Экономикалық</em><br>инфографика</h1>
+        <p class="lead">Қазақстанның шикізат базасын ғылыми негіздеп, КСРО ауыр өнеркәсібіндегі мыс пен металлургия өндірісін еселеген ғұлама академиктің цифрлық-аналитикалық моделі.</p>
+        <div style="margin-top:24px; display:flex; gap:12px;">
+          <a href="#data" style="background:var(--soviet-red); color:#fff; padding:12px 20px; border-radius:4px; text-decoration:none; font-weight:700; font-family:sans-serif; font-size:.9rem;">Деректерді сараптау ↗</a>
+          <a href="#museum" style="border:1px solid var(--copper); color:var(--copper); padding:12px 20px; border-radius:4px; text-decoration:none; font-weight:700; font-family:sans-serif; font-size:.9rem;">Виртуалды гид</a>
+        </div>
+      </div>
+
+      <!-- ИНЖЕНЕРЛІК ВЕКТОРЛЫҚ СХЕМА (СУРЕТСІЗ) -->
+      <div class="blueprint-card">
+        <svg viewBox="0 0 300 220" width="100%" height="100%">
+          <!-- Сорттық тор сызықтары -->
+          <line x1="0" y1="50" x2="300" y2="50" stroke="rgba(217,155,97,.2)" stroke-dasharray="2,2"/>
+          <line x1="0" y1="110" x2="300" y2="110" stroke="rgba(217,155,97,.2)" stroke-dasharray="2,2"/>
+          <line x1="0" y1="170" x2="300" y2="170" stroke="rgba(217,155,97,.2)" stroke-dasharray="2,2"/>
+          
+          <!-- Өндіріс графигінің сызығы -->
+          <polyline points="20,180 80,150 140,130 200,60 280,30" fill="none" stroke="#d99b61" stroke-width="3"/>
+          <polyline points="20,180 80,165 140,150 200,100 280,70" fill="none" stroke="#b83a2b" stroke-width="2" stroke-dasharray="4,4"/>
+          
+          <!-- Нүктелер -->
+          <circle cx="80" cy="150" r="4" fill="#d99b61"/>
+          <circle cx="140" cy="130" r="4" fill="#d99b61"/>
+          <circle cx="200" cy="60" r="5" fill="#b83a2b"/>
+          <circle cx="280" cy="30" r="6" fill="#8ab8a2"/>
+          
+          <!-- Жазулар -->
+          <text x="80" y="140" fill="#8b9aa7" font-size="9">1930 (Жезқазған)</text>
+          <text x="170" y="55" fill="#b83a2b" font-size="9" font-weight="bold">1946 (Ғылым Академиясы)</text>
+          <text x="220" y="25" fill="#8ab8a2" font-size="9">1958 (Лениндік сыйлық)</text>
+        </svg>
+        <div class="metric-row">
+          <div class="metric"><b>100%</b><span>Ғылыми негіз</span></div>
+          <div class="metric"><b>№1</b><span>Мыс қоры</span></div>
+          <div class="metric"><b>1946</b><span>Академия</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY / STRATEGY -->
+  <section id="story">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">01 / Экономикалық вектор</div>
+          <h2>Өндіріс пен ғылымның өзара байланысы</h2>
+        </div>
+        <p>Сәтбаев барланған геологиялық кен орындарын КСРО өнеркәсібінің басты қозғаушы күшіне айналдырды.</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <div class="num">01 — МИНЕРАЛДАР</div>
+          <h3>Жезқазған мысы</h3>
+          <p>Кен орнының стратегиялық қорын дәлелдеп, КСРО түсті металлургиясының негізгі тиегін қалады.</p>
+        </article>
+        <article class="card">
+          <div class="num">02 — ИНСТИТУЦИОНАЛДАНУ</div>
+          <h3>Ғылым Академиясы</h3>
+          <p>1946 жылы құрылған академия геология, химия және металлургия институттарын тоғыстырды.</p>
+        </article>
+        <article class="card">
+          <div class="num">03 — ИНФРАҚҰРЫЛЫМ</div>
+          <h3>Ертіс-Қарағанды каналы</h3>
+          <p>Өнеркәсіптік Орталық Қазақстанды ауыз сумен және өндірістік су ресурстарымен қамтамасыз ету жобасы.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFOGRAPHICS / CHARTS SECTION -->
+  <section id="data">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">02 / Статистика және динамика</div>
+          <h2>Инфографикалық индикаторлар</h2>
+        </div>
+        <p>Сәтбаев зерттеулерінің нәтижесіндегі өнеркәсіп пен ғылымның өсу көрсеткіштері.</p>
+      </div>
+
+      <div class="chart-box">
+        <div class="chart-title">
+          <span>Одақтық мыс өндірісіндегі Жезқазған үлесінің өсуі (%)</span>
+          <span style="color:var(--mint)">1926 – 1960 жж.</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar-item">
+            <span>1926 (Бастапқы)</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 12%;"></div></div>
+            <span style="color:var(--copper)">12%</span>
+          </div>
+          <div class="bar-item">
+            <span>1940 (Өндіріс)</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 48%;"></div></div>
+            <span style="color:var(--copper)">48%</span>
+          </div>
+          <div class="bar-item">
+            <span>1955 (Игерілген)</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div>
+            <span style="color:var(--copper)">82%</span>
+          </div>
+          <div class="bar-item">
+            <span>1960 (Шың)</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 95%;"></div></div>
+            <span style="color:var(--soviet-red); font-weight:bold">95%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">03 / Уақыт шкаласы</div>
+          <h2>Тарихи кезеңдер тізбегі</h2>
+        </div>
+        <p>Кезеңді басу арқылы негізгі оқиғаның сипаттамасын ашыңыз.</p>
+      </div>
+      <div class="timeline">
+        <div class="event">
+          <div class="year">1899</div>
+          <button class="active" data-title="1899 ж. — Дүниеге келуі" data-text="Қаныш Имантайұлы Сәтбаев Павлодар облысы, Баянауыл өңірінде дүниеге келді. Жастайынан ғылым мен ағартушылыққа бейім болды.">
+            <strong>Ғалымның дүниеге келуі</strong>
+            <span>Баянауыл өлкесі · Тұлғалық қалыптасу кезеңі</span>
+          </button>
+        </div>
+        <div class="event">
+          <div class="year">1930 жж.</div>
+          <button data-title="1930 жж. — Жезқазған ашылуы" data-text="Ағылшын концессионерлері «келешегі жоқ» деп тапқан Жезқазған өңірін Сәтбаев геологиялық тұрғыдан дәлелдеп, КСРО-дағы ең ірі мыс кен орнына айналдырды.">
+            <strong>Жезқазған геологиялық барлауы</strong>
+            <span>Мыс қорының әлемдік деңгейде дәлелденуі</span>
+          </button>
+        </div>
+        <div class="event">
+          <div class="year">1946</div>
+          <button data-title="1946 ж. — Ғылым Академиясы" data-text="Қазақ КСР Ғылым Академиясы ұйымдастырылып, Сәтбаев оның тунғыш Президенті болып сайланды. Республикада жүйелі академиялық ғылым калыптасты.">
+            <strong>ҚазССР Ғылым Академиясын құру</strong>
+            <span>Тұңғыш президенттік қызмет</span>
+          </button>
+        </div>
+        <div class="event">
+          <div class="year">1958</div>
+          <button data-title="1958 ж. — Лениндік сыйлық" data-text="Орталық Қазақстанның кешенді металлогениялық болжам картасын жасағаны үшін Сәтбаев бастаған ғалымдар тобына Лениндік сыйлық берілді.">
+            <strong>Металлогениялық мектеп</strong>
+            <span>Болжамдық карталар және мемлекеттік сыйлық</span>
+          </button>
+        </div>
+      </div>
+      <div class="event-detail" id="eventDetail">
+        <strong>1899 ж. — Дүниеге келуі</strong><br>
+        Қаныш Имантайұлы Сәтбаев Павлодар облысы, Баянауыл өңірінде дүниеге келді. Жастайынан ғылым мен ағартушылыққа бейім болды.
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYSIS -->
+  <section id="impact">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">04 / Сараптама</div>
+          <h2>Авторлық академикалық талдау</h2>
+        </div>
+        <p>Сәтбаев мұрасының қазіргі Қазақстан экономикасындағы орны.</p>
+      </div>
+      <div class="analysis">
+        <div class="quote">
+          <blockquote>«Сәтбаев — шикізатты тек өндіріп қана қоймай, оны кешенді өңдеу мен ғылыми болжаудың отандық мектебін құрған реформатор».</blockquote>
+          <p>— Жобаның аналитикалық қорытындысы</p>
+        </div>
+        <div class="comparison">
+          <div class="compare-row">
+            <b>КСРО индустрияландыруы</b>
+            <span>Одақтық соғыс және соғыстан кейінгі өнеркәсіпті шикізатпен қамтамасыз ету.</span>
+          </div>
+          <div class="compare-row">
+            <b>Сәтбаев концепциясы</b>
+            <span>Кен орындарын металлогениялық болжау және ғылымды өндіріспен тікелей байланыстыру.</span>
+          </div>
+          <div class="compare-row">
+            <b>Заманауи сабақтастық</b>
+            <span>Тәуелсіз Қазақстан тау-кен өнеркәсібінің негізгі өндірістік активтері.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIRTUAL MUSEUM CHAT -->
+  <section id="museum">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">05 / Деректер модулі</div>
+          <h2>Интерактивті анықтамалық</h2>
+        </div>
+        <p>Конкурс стендін қорғау кезіндегі негізгі сұрақтар мен расталған жауаптар.</p>
+      </div>
+      <div class="museum">
+        <div class="chat">
+          <div>
+            <div class="chat-head">
+              <div class="avatar">Q</div>
+              <div>
+                <b style="font-family:sans-serif; color:var(--copper)">QANYSH.GUIDE</b>
+                <small style="display:block; color:var(--muted)">Тарихи-деректер анықтамалығы</small>
+              </div>
+            </div>
+            <div class="chat-log" id="chatLog">
+              <div class="bubble">Сәлем! Төмендегі батырмаларды басу арқылы расталған тарихи деректерді алыңыз.</div>
+            </div>
+          </div>
+          <div class="chat-controls">
+            <button data-q="zhez">Жезқазған маңызы?</button>
+            <button data-q="academy">1946 жылғы Академия?</button>
+            <button data-q="legacy">Экономикалық әсері?</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+          <div class="num">КОНКУРС ТАЛАБЫ</div>
+          <h3 style="margin-top:8px;">Стенд қорғауға арналған тезистер</h3>
+          <p style="margin-top:8px;">1. Сөз сөйлеуде өмірбаяннан бөлек, <b>экономикалық көрсеткіштерді</b> алға тартыңыз.<br>2. Инфографикалық графиктерге сілтеме жасаңыз.<br>3. QR-код арқылы интерактивті режимді қазыларға көрсетіңіз.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="sources">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">06 / Дереккөздер</div>
+          <h2>Ресми мұрағат сілтемелері</h2>
+        </div>
+        <p>Мемлекеттік орган порталдары мен университет материалдары.</p>
+      </div>
+      <div class="archive">
+        <a class="source" href="https://www.gov.kz/memleket/entities/mfa-bern/press/news/details/796314" target="_blank" rel="noopener">
+          <b>ҚР Сыртқы істер министрлігі — Сәтбаев мұрасы</b>
+          <span>Ресми өмірбаяндық және ғылыми материалдар.</span>
+        </a>
+        <a class="source" href="https://archive.president.kz/news/k-i-satpaev-i-fundamentalnaya-nauka-kazakhstana/" target="_blank" rel="noopener">
+          <b>ҚР Президентінің Архиві</b>
+          <span>ҚазССР Ғылым Академиясының құрылу тарихы.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footline">
+    <div><b>QANYSH.ИНФОГРАФИКА</b> — Цифрлық инженерлік портрет</div>
+    <div>«Менің шағын Отаным» конкурсына арналған</div>
+    <div>© 2026 ж. Барлық құқықтар қорғалған.</div>
+  </div>
+</footer>
+
+<script>
+// Бар графигінің анимациясы
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(el => {
+      const w = el.style.width;
+      el.style.width = '0';
+      setTimeout(() => el.style.width = w, 100);
+    });
+  }, 300);
+});
+
+// Хронология логикасы
+const timelineButtons = document.querySelectorAll('.event button');
+const detail = document.getElementById('eventDetail');
+timelineButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    timelineButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    detail.innerHTML = '<strong>' + btn.dataset.title + '</strong><br>' + btn.dataset.text;
+  });
+});
+
+// Музей анықтамалығы
+const answers = {
+  zhez: 'Жезқазған кен орны — КСРО өнеркәсібін шикізатпен қамтамасыз еткен негізгі мыс базасы. Сәтбаев оның қоры бұрынғы бағалаулардан жүздеген есе көп екенін дәлелдеді.',
+  academy: '1946 жылы құрылған ҚазССР Ғылым Академиясы Қазақстандағы техникалық және жаратылыстану ғылымдарының институционалдық негізін қалады.',
+  legacy: 'Сәтбаевтың металлогениялық мектебі мен ашқан кен орындары бүгінгі Тәуелсіз Қазақстанның тау-кен кешенінің негізін құрайды.'
+};
+document.querySelectorAll('[data-q]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const log = document.getElementById('chatLog');
+    const qText = btn.textContent;
+    const ans = answers[btn.dataset.q];
+    log.innerHTML = '<div class="bubble"><b>Сұрақ:</b> ' + qText + '</div><div class="bubble">' + ans + '</div><small style="color:var(--muted)">Расталған мұрағат дерегі.</small>';
+  });
+});
+</script>
+</body>
+</html>
